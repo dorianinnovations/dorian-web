@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dorian - Emotional Universe Simulator" />
-  <meta name="theme-color" content="#0f0f0f" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" href="generated-icon.png" />
-  <link rel="stylesheet" href="index.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dorian - Emotional Universe Simulator">
+  <meta name="theme-color" content="#0f0f0f">
   <title>Dorian | Emotional Universe</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./generated-icon.png">
+  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
   <div id="splash-screen" class="centered">
@@ -17,8 +17,8 @@
     <button id="start-button">Begin Universe</button>
   </div>
 
-  <main id="simulation-container" style="display: none;">
-    <canvas id="dorian-canvas" width="1000" height="1000" class="simulation-canvas"></canvas>
+  <main id="simulation-container" hidden>
+    <canvas id="dorian-canvas" width="1000" height="1000"></canvas>
     <div id="ui-panel" class="metrics-panel">
       <h2>Emotional Metrics</h2>
       <p id="tick-display">Tick: 0</p>
@@ -28,12 +28,13 @@
     </div>
   </main>
 
-  <script type="module" src="emotions.js"></script>
-  <script type="module" src="dorian.js"></script>
+  <script type="module" src="./emotions.js"></script>
+  <script type="module" src="./dorian.js"></script>
   <script>
-    document.getElementById('start-button').addEventListener('click', () => {
+    const startBtn = document.getElementById('start-button');
+    startBtn.addEventListener('click', () => {
       document.getElementById('splash-screen').style.display = 'none';
-      document.getElementById('simulation-container').style.display = 'flex';
+      document.getElementById('simulation-container').hidden = false;
     });
   </script>
 </body>
